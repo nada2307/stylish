@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
 
+import '../../on_boarding/presentation/on_boarding_screen.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -55,6 +57,12 @@ class _SplashScreenState extends State<SplashScreen>
 void navigateToHome(context) {
   Future.delayed(
     const Duration(seconds: 2),
-    () {},
+    () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OnBoardingScreen(),
+          ));
+    },
   );
 }

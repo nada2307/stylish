@@ -8,6 +8,7 @@ class ColorManager {
   static const Color white = Color(0xFFFFFFFF);
   static const Color grey = Color(0xFFA0A0A1);
   static const Color grey1 = Color(0xFFA8A8A9);
+  static const Color grey2 = Color(0xFFC4C4C4);
 
   static const MaterialColor themeColor =
       MaterialColor(0xFFF83758, <int, Color>{
