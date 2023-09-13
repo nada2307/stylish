@@ -19,6 +19,15 @@ class StringManager {
   static const String forgotPassword = 'Forgot Password?';
   static const String login = 'Login';
   static const String oRContinueWith = '- OR Continue with -';
-  static const String createAnAccount = 'Create An Account';
+  static const String createAnAccount = 'Create An Account ';
   static const String signUp = 'Sign Up';
+  static const String createAnAccounts = 'Create an\naccount';
+  static const String confirmPassword = 'Confirm Password';
+  static const String iAlreadyHaveAnAccount = 'I Already Have an Account ';
+  static const String createAccount = 'Create Account';
+  static const String enterYourEmailAddress = 'Enter your email address';
+  static const String submit = 'Submit';
+  static const String forgetText =
+      'We will send you a message to set or reset your new password';
+  static const String forgotPassword1 = 'Forgot\nPassword?';
 }

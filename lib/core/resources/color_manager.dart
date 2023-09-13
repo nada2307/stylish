@@ -14,6 +14,7 @@ class ColorManager {
   static const Color textFormColor = Color(0xFFF3F3F3);
   static const Color darkGrey = Color(0xFF626262);
   static const Color facebook = Color(0xFF3D4DA6);
+  static const Color darkOrange = Color(0xFFFF4B26);
 
   static const MaterialColor themeColor =
       MaterialColor(0xFFF83758, <int, Color>{

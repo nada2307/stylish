@@ -13,3 +13,9 @@ void navigateAndFinish(
         return false;
       },
     );
+
+void navigateToh(
+  context,
+  widget,
+) =>
+    Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
