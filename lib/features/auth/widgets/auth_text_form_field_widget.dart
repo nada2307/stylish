@@ -10,6 +10,7 @@ class AuthTextFormFieldWidget extends StatefulWidget {
   bool isPassword;
   bool isObscure;
   final Function(String) onChange;
+  String? Function(String?)? validation;
   final TextEditingController controller;
 
   AuthTextFormFieldWidget({
@@ -18,6 +19,7 @@ class AuthTextFormFieldWidget extends StatefulWidget {
     required this.label,
     this.isPassword = false,
     this.isObscure = false,
+    this.validation,
     required this.onChange,
     required this.controller,
   });
@@ -31,13 +33,14 @@ class _AuthTextFormFieldWidgetState extends State<AuthTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        if (value!.isEmpty) {
-          return '${widget.label} is required';
-        } else {
-          return null;
-        }
-      },
+      validator: widget.validation ??
+          (value) {
+            if (value!.isEmpty) {
+              return '${widget.label} is required';
+            } else {
+              return null;
+            }
+          },
       onChanged: widget.onChange,
       decoration: InputDecoration(
         labelText: widget.label,

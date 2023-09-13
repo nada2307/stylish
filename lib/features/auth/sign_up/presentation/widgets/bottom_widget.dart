@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stylish/core/widgets/components.dart';
-import 'package:stylish/features/auth/sign_up/presentation/sign_up_screen.dart';
 
 import '../../../../../core/resources/color_manager.dart';
 import '../../../../../core/resources/string_manager.dart';
@@ -35,7 +33,7 @@ class BottomWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              StringManager.createAnAccount,
+              StringManager.iAlreadyHaveAnAccount,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 14,
@@ -44,10 +42,10 @@ class BottomWidget extends StatelessWidget {
             ),
             InkWell(
                 onTap: () {
-                  navigateToh(context, SignUpScreen());
+                  Navigator.pop(context);
                 },
                 child: Text(
-                  StringManager.signUp,
+                  StringManager.login,
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: ColorManager.primary,
