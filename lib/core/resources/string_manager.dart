@@ -12,4 +12,13 @@ class StringManager {
   static const String prev = 'Prev';
   static const String next = 'Next';
   static const String getStarted = 'Get Started';
+  static const String welcomeBack = 'Welcome\nBack!';
+  static const String skip = 'Skip';
+  static const String usernameOrEmail = 'Username or Email';
+  static const String password = 'Password';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String login = 'Login';
+  static const String oRContinueWith = '- OR Continue with -';
+  static const String createAnAccount = 'Create An Account';
+  static const String signUp = 'Sign Up';
 }
