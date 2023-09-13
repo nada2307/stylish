@@ -1,9 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish/core/resources/color_manager.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:stylish/core/widgets/components.dart';
+import 'package:stylish/features/auth/sign_in/cubit/sign_in_cubit.dart';
+import 'package:stylish/features/auth/sign_in/presentation/sign_in_screen.dart';
 
 import '../../../../core/resources/string_manager.dart';
 import '../models/on_boarding_item_model.dart';
@@ -28,14 +32,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     }
   }
 
-  void nextFunction() {
+  void nextFunction(context) {
     if (currentPage != 2) {
       pageController.animateToPage(
         currentPage + 1,
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeIn,
       );
+    } else {
+      signInFunction(context);
     }
+  }
+
+  void signInFunction(context) {
+    navigateAndFinish(
+      context,
+      BlocProvider(
+        create: (context) => SignInCubit(),
+        child: SignInScreen(),
+      ),
+    );
   }
 
   @override
@@ -70,9 +86,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             padding: const EdgeInsets.only(right: 10.0, top: 15),
             child: Center(
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  signInFunction(context);
+                },
                 child: Text(
-                  'Skip',
+                  StringManager.skip,
                   style: TextStyle(
                     color: ColorManager.black,
                     fontSize: 18,
@@ -164,7 +182,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 Spacer(),
                 TextButton(
                   onPressed: () {
-                    nextFunction();
+                    nextFunction(context);
                   },
                   child: Text(
                     currentPage == 2
