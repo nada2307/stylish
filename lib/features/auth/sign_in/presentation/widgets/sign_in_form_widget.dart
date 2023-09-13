@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stylish/core/widgets/components.dart';
+import 'package:stylish/features/auth/forget_password/presentation/forgot_password_screen.dart';
 import 'package:stylish/features/auth/sign_in/cubit/sign_in_cubit.dart';
 
 import '../../../../../core/resources/color_manager.dart';
@@ -22,65 +24,67 @@ class SignInFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 3.0),
-      child: Form(
-        key: formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              StringManager.welcomeBack,
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-              ),
+    return Form(
+      key: formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            StringManager.welcomeBack,
+            style: TextStyle(
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
             ),
-            SizedBox(
-              height: 25,
-            ),
-            AuthTextFormFieldWidget(
-              icon: Icons.person_2_rounded,
-              label: StringManager.usernameOrEmail,
-              onChange: (value) {
-                cubit.onChangeEmail(value);
-              },
-              controller: emailController,
-            ),
-            SizedBox(
-              height: 31,
-            ),
-            AuthTextFormFieldWidget(
-              icon: MyIcons.lock_filled,
-              label: StringManager.password,
-              onChange: (value) {
-                cubit.onChangePassword(value);
-              },
-              isPassword: true,
-              isObscure: true,
-              controller: passwordController,
-            ),
-            SizedBox(
-              height: 9.0,
-            ),
-            Row(
-              children: [
-                Spacer(),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    StringManager.forgotPassword,
-                    style: TextStyle(
-                      color: ColorManager.primary,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w400,
-                    ),
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          AuthTextFormFieldWidget(
+            icon: Icons.person_2_rounded,
+            label: StringManager.usernameOrEmail,
+            onChange: (value) {
+              cubit.onChangeEmail(value);
+            },
+            controller: emailController,
+          ),
+          SizedBox(
+            height: 31,
+          ),
+          AuthTextFormFieldWidget(
+            icon: MyIcons.lock_filled,
+            label: StringManager.password,
+            onChange: (value) {
+              cubit.onChangePassword(value);
+            },
+            isPassword: true,
+            isObscure: true,
+            controller: passwordController,
+          ),
+          SizedBox(
+            height: 9.0,
+          ),
+          Row(
+            children: [
+              Spacer(),
+              TextButton(
+                onPressed: () {
+                  navigateToh(
+                    context,
+                    ForgotPasswordScreen(),
+                  );
+                },
+                child: Text(
+                  StringManager.forgotPassword,
+                  style: TextStyle(
+                    color: ColorManager.primary,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

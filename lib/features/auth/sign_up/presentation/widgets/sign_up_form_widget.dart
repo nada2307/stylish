@@ -97,7 +97,7 @@ class SignUpFormWidget extends StatelessWidget {
                   TextSpan(
                     text: ' Register ',
                     style: TextStyle(
-                      color: ColorManager.primary,
+                      color: ColorManager.darkOrange,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                     ),
