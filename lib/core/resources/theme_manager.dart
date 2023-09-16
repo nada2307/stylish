@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'color_manager.dart';
 
@@ -7,8 +8,11 @@ ThemeData getAppTheme() {
     primarySwatch: ColorManager.themeColor,
     scaffoldBackgroundColor: ColorManager.white,
     appBarTheme: AppBarTheme(
-      color: ColorManager.white,
-      elevation: 0.0,
-    ),
+        color: ColorManager.white,
+        elevation: 0.0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.dark,
+          statusBarColor: ColorManager.white,
+        )),
   );
 }

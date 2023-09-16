@@ -30,4 +30,6 @@ class StringManager {
   static const String forgetText =
       'We will send you a message to set or reset your new password';
   static const String forgotPassword1 = 'Forgot\nPassword?';
+  static const String getStartedText = 'You want Authentic, here you go!';
+  static const String getStartedText1 = 'Find it here, buy it now!';
 }
