@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
+import 'package:stylish/core/widgets/components.dart';
 import 'package:stylish/core/widgets/default_button_widget.dart';
+import 'package:stylish/features/home/presentation/home_screen.dart';
 
 import '../../../core/resources/color_manager.dart';
 import '../../../core/resources/string_manager.dart';
@@ -24,7 +26,19 @@ class StartScreen extends StatelessWidget {
             Container(
               height: MediaQuery.sizeOf(context).height * 0.42,
               width: double.infinity,
-              color: ColorManager.black.withOpacity(0.63),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    ColorManager.white.withOpacity(0.001),
+                    ColorManager.black.withOpacity(0.63),
+                    ColorManager.black.withOpacity(0.63),
+                    ColorManager.black.withOpacity(0.63),
+                    ColorManager.black.withOpacity(0.63),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.only(
                   bottom: 34.0,
@@ -58,7 +72,10 @@ class StartScreen extends StatelessWidget {
                     ),
                     Spacer(),
                     DefaultButton(
-                        function: () {}, text: StringManager.getStarted),
+                        function: () {
+                          navigateAndFinish(context, HomeScreen());
+                        },
+                        text: StringManager.getStarted),
                   ],
                 ),
               ),
