@@ -12,27 +12,27 @@ class HomeCubit extends Cubit<HomeState> {
   static HomeCubit get(context) => BlocProvider.of(context);
   List<CategoryModel> categories = [
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.beauty,
       name: 'Beauty',
     ),
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.fashion,
       name: 'Fashion',
     ),
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.kids,
       name: 'Kids',
     ),
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.men,
       name: 'Men',
     ),
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.women,
       name: 'Women',
     ),
     CategoryModel(
-      image: AssetManager.start,
+      image: AssetManager.electronics,
       name: 'Electronics',
     ),
   ];
