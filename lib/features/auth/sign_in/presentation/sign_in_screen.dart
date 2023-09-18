@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish/core/resources/string_manager.dart';
+import 'package:stylish/core/widgets/components.dart';
 import 'package:stylish/core/widgets/default_button_widget.dart';
 import 'package:stylish/features/auth/sign_in/cubit/sign_in_cubit.dart';
 import 'package:stylish/features/auth/sign_in/presentation/widgets/bottom_widget.dart';
 import 'package:stylish/features/auth/sign_in/presentation/widgets/sign_in_form_widget.dart';
+import 'package:stylish/features/get_started/presentation/start_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -19,7 +21,9 @@ class SignInScreen extends StatelessWidget {
       create: (context) => SignInCubit(),
       child: BlocConsumer<SignInCubit, SignInState>(
         listener: (context, state) {
-          // TODO: implement listener
+          if (state is SignInSuccessState) {
+            navigateToh(context, StartScreen());
+          }
         },
         builder: (context, state) {
           var cubit = SignInCubit.get(context);
@@ -42,6 +46,8 @@ class SignInScreen extends StatelessWidget {
                       ),
                       DefaultButton(
                         function: () {
+                          navigateToh(context, StartScreen());
+
                           if (formKey.currentState!.validate()) {
                             cubit.signInFunction();
                           }
