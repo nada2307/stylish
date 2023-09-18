@@ -8,4 +8,5 @@ class AssetManager {
   static const String google = '$imagePath/google.png';
   static const String start = '$imagePath/start.png';
   static const String profile = '$imagePath/profile.png';
+  static const String filter = '$imagePath/filter.svg';
 }

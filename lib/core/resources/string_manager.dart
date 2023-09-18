@@ -33,4 +33,7 @@ class StringManager {
   static const String getStartedText = 'You want Authentic, here you go!';
   static const String getStartedText1 = 'Find it here, buy it now!';
   static const String searchAnyProduct = 'Search any Product..';
+  static const String allFeatured = 'All Featured';
+  static const String sort = 'Sort';
+  static const String filter = 'Filter';
 }
