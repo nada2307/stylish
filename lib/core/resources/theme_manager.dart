@@ -6,12 +6,12 @@ import 'color_manager.dart';
 ThemeData getAppTheme() {
   return ThemeData(
     primarySwatch: ColorManager.themeColor,
-    scaffoldBackgroundColor: ColorManager.white,
+    scaffoldBackgroundColor: ColorManager.background,
     appBarTheme: AppBarTheme(
-        color: ColorManager.white,
+        color: ColorManager.background,
         elevation: 0.0,
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark,
           statusBarColor: ColorManager.white,
         )),
   );
