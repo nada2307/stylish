@@ -7,6 +7,7 @@ import 'package:stylish/core/widgets/search_widget.dart';
 import 'package:stylish/features/home/cubit/home_cubit.dart';
 import 'package:stylish/features/home/presentation/widgets/categry_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
 
 import '../../../core/resources/color_manager.dart';
@@ -28,6 +29,7 @@ class HomeScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = HomeCubit.get(context);
           PageController saleController = PageController();
+          ScrollController productsController = ScrollController();
           return Scaffold(
             appBar: defaultAppBar(),
             body: SingleChildScrollView(
@@ -54,24 +56,32 @@ class HomeScreen extends StatelessWidget {
                   CategoryListWidget(
                     categories: cubit.categories,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Column(
-                      children: [
-                        // PageView.builder(
-                        //   scrollDirection: Axis.horizontal,
-                        //   controller: saleController,
-                        //   physics: const BouncingScrollPhysics(),
-                        //   itemBuilder: (context, index) => Text('data'),
-                        //   itemCount: 3,
-                        // ),
-                        SaleItemWidget(
+                  SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                    height: 190,
+                    child: PageView.builder(
+                      scrollDirection: Axis.horizontal,
+                      controller: saleController,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: SaleItemWidget(
                           title: '50-40% OFF',
                           text: 'Now in (product)',
                           text1: 'All colours',
                           image: AssetManager.sale,
                           onTap: () {},
                         ),
+                      ),
+                      itemCount: 3,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Column(
+                      children: [
                         SizedBox(
                           height: 10,
                         ),
@@ -89,6 +99,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                         DealOfDayWidget(
                           onTap: () {},
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        HomeProductsListWidget(controller: productsController),
+                        SizedBox(
+                          height: 15,
                         ),
                       ],
                     ),
