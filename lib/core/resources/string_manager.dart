@@ -36,4 +36,5 @@ class StringManager {
   static const String allFeatured = 'All Featured';
   static const String sort = 'Sort';
   static const String filter = 'Filter';
+  static const String shopNow = 'Shop Now';
 }
