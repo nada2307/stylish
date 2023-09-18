@@ -5,6 +5,7 @@ class ColorManager {
   static const Color primaryLight = Color(0xFFFA7189);
   static const Color primaryLight1 = Color(0xFFFFCCD5);
   static const Color primaryLight2 = Color(0xFFFCF3F6);
+  static const Color primaryLight3 = Color(0xFFFFA3B3);
   static const Color black = Color(0xFF000000);
   static const Color white = Color(0xFFFFFFFF);
   static const Color background = Color(0xFFFDFDFD);
@@ -19,6 +20,10 @@ class ColorManager {
   static const Color darkGrey = Color(0xFF626262);
   static const Color facebook = Color(0xFF3D4DA6);
   static const Color darkOrange = Color(0xFFFF4B26);
+  static const Color move = Color(0xFF21003D);
+  static const Color blue = Color(0xFF4392F9);
+  static const Color yellow = Colors.yellow;
+  static const Color lightRed = Color(0xFFFE735C);
 
   static const MaterialColor themeColor =
       MaterialColor(0xFFF83758, <int, Color>{
