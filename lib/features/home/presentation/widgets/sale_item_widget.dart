@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stylish/features/home/presentation/widgets/view_all_widget.dart';
 
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/string_manager.dart';
 
 class SaleItemWidget extends StatelessWidget {
   final String title;
@@ -69,37 +69,7 @@ class SaleItemWidget extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              InkWell(
-                onTap: onTap,
-                child: Container(
-                  width: 100,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(6),
-                    border: Border.all(
-                      color: ColorManager.white,
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        StringManager.shopNow,
-                        style: TextStyle(
-                          color: ColorManager.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_right_alt_rounded,
-                        color: ColorManager.white,
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              ViewAllWidget(onTap: onTap),
             ],
           ),
         )

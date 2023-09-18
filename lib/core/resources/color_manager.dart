@@ -21,6 +21,7 @@ class ColorManager {
   static const Color facebook = Color(0xFF3D4DA6);
   static const Color darkOrange = Color(0xFFFF4B26);
   static const Color move = Color(0xFF21003D);
+  static const Color blue = Color(0xFF4392F9);
 
   static const MaterialColor themeColor =
       MaterialColor(0xFFF83758, <int, Color>{
