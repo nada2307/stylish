@@ -10,6 +10,7 @@ import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.da
 import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/special_offer_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
 
 import '../../../core/resources/color_manager.dart';
 import '../../../core/widgets/default_app_bar.dart';
@@ -112,6 +113,13 @@ class HomeScreen extends StatelessWidget {
                           height: 15,
                         ),
                         Special1offerWidget(),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        TrendingCardWidget(onTap: () {}),
                       ],
                     ),
                   ),

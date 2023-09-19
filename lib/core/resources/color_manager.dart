@@ -24,6 +24,7 @@ class ColorManager {
   static const Color blue = Color(0xFF4392F9);
   static const Color yellow = Colors.yellow;
   static const Color lightRed = Color(0xFFFE735C);
+  static const Color pink = Color(0xFFFD6E87);
 
   static const MaterialColor themeColor =
       MaterialColor(0xFFF83758, <int, Color>{
