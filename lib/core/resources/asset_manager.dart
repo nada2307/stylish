@@ -19,4 +19,5 @@ class AssetManager {
   static const String product = '$imagePath/product.png';
   static const String product1 = '$imagePath/product1.png';
   static const String product2 = '$imagePath/product2.png';
+  static const String specialOffer = '$imagePath/special_offer.png';
 }
