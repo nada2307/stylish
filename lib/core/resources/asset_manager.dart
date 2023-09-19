@@ -27,4 +27,8 @@ class AssetManager {
   static const String lipstick = '$imagePath/lipstick.png';
   static const String hotOffer = '$imagePath/hot_offer.png';
   static const String hotOffer1 = '$imagePath/hot_offer1.png';
+  static const String sponserd = '$imagePath/sponserd.png';
+  static const String sponserd1 = '$imagePath/sponserd1.png';
+  static const String sponserd2 = '$imagePath/sponserd2.png';
+  static const String sponserd3 = '$imagePath/sponserd3.png';
 }

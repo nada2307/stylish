@@ -12,6 +12,7 @@ import 'package:stylish/features/home/presentation/widgets/hot_offers_card_widge
 import 'package:stylish/features/home/presentation/widgets/products_small_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/special_offer_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/sponsored_card_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
 
 import '../../../core/resources/color_manager.dart';
@@ -136,6 +137,11 @@ class HomeScreen extends StatelessWidget {
                           ],
                           onTap: () {},
                         ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        SponsoredCardWidget(
+                            images: cubit.sponsoredImages, onPress: () {}),
                       ],
                     ),
                   ),

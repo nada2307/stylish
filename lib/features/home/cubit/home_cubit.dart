@@ -175,4 +175,11 @@ class HomeCubit extends Cubit<HomeState> {
       ratingNumber: 56890,
     ),
   ];
+
+  List<String> sponsoredImages = [
+    AssetManager.sponserd,
+    AssetManager.sponserd1,
+    AssetManager.sponserd2,
+    AssetManager.sponserd3,
+  ];
 }
