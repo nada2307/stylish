@@ -2,26 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../core/resources/color_manager.dart';
+import '../../models/product_model.dart';
 
 class HomeProductItemWidget extends StatelessWidget {
-  final String image;
-  final String name;
-  final String description;
-  final String price;
+  final ProductModel product;
   final Function() onTap;
 
-  const HomeProductItemWidget(
-      {super.key,
-      required this.image,
-      required this.name,
-      required this.description,
-      required this.price,
-      required this.onTap});
+  const HomeProductItemWidget({
+    super.key,
+    required this.onTap,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: (MediaQuery.of(context).size.width * 0.5) - 15,
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(6),
@@ -41,7 +37,7 @@ class HomeProductItemWidget extends StatelessWidget {
             ),
             clipBehavior: Clip.antiAlias,
             child: Image.asset(
-              image,
+              product.image,
               height: 124,
               width: MediaQuery.of(context).size.width * 0.5,
               fit: BoxFit.fitWidth,
@@ -56,7 +52,7 @@ class HomeProductItemWidget extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  name,
+                  product.name,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
@@ -66,7 +62,7 @@ class HomeProductItemWidget extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  description,
+                  product.description,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 10,
@@ -76,7 +72,7 @@ class HomeProductItemWidget extends StatelessWidget {
                   height: 4,
                 ),
                 Text(
-                  '₹$price',
+                  '₹${product.price}',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 12,
@@ -85,30 +81,31 @@ class HomeProductItemWidget extends StatelessWidget {
                 SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      '₹2499',
-                      style: TextStyle(
-                        decoration: TextDecoration.lineThrough,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w300,
-                        color: ColorManager.grey4,
+                if (product.isOffer)
+                  Row(
+                    children: [
+                      Text(
+                        '₹${product.oldPrice}',
+                        style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: ColorManager.grey4,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      '40%Off',
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                        color: ColorManager.lightRed,
+                      SizedBox(
+                        width: 4,
                       ),
-                    ),
-                  ],
-                ),
+                      Text(
+                        product.offer,
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: ColorManager.lightRed,
+                        ),
+                      ),
+                    ],
+                  ),
                 SizedBox(
                   height: 5,
                 ),
@@ -124,14 +121,14 @@ class HomeProductItemWidget extends StatelessWidget {
                       unratedColor: ColorManager.grey4,
                       onRatingUpdate: (value) {},
                       itemCount: 5,
-                      initialRating: 2,
+                      initialRating: product.rate,
                       allowHalfRating: true,
                     ),
                     SizedBox(
                       width: 5,
                     ),
                     Text(
-                      '56890',
+                      product.ratingNumber.toString(),
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.w500,

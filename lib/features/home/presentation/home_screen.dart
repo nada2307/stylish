@@ -103,7 +103,10 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        HomeProductsListWidget(controller: productsController),
+                        HomeProductsListWidget(
+                          controller: productsController,
+                          products: cubit.products,
+                        ),
                         SizedBox(
                           height: 15,
                         ),

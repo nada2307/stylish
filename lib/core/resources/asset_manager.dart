@@ -16,4 +16,7 @@ class AssetManager {
   static const String electronics = '$imagePath/electronics.png';
   static const String fashion = '$imagePath/fashion.png';
   static const String sale = '$imagePath/sale.png';
+  static const String product = '$imagePath/product.png';
+  static const String product1 = '$imagePath/product1.png';
+  static const String product2 = '$imagePath/product2.png';
 }
