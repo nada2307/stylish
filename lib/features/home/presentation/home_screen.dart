@@ -8,6 +8,7 @@ import 'package:stylish/features/home/cubit/home_cubit.dart';
 import 'package:stylish/features/home/presentation/widgets/categry_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/products_small_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/special_offer_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
@@ -120,6 +121,10 @@ class HomeScreen extends StatelessWidget {
                           height: 15,
                         ),
                         TrendingCardWidget(onTap: () {}),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ProductsSmallListWidget(products: cubit.smallProducts),
                       ],
                     ),
                   ),

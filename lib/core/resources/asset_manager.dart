@@ -20,4 +20,9 @@ class AssetManager {
   static const String product1 = '$imagePath/product1.png';
   static const String product2 = '$imagePath/product2.png';
   static const String specialOffer = '$imagePath/special_offer.png';
+  static const String product4 = '$imagePath/product4.png';
+  static const String product5 = '$imagePath/product5.png';
+  static const String product6 = '$imagePath/product6.png';
+  static const String sandal = '$imagePath/sandal.png';
+  static const String lipstick = '$imagePath/lipstick.png';
 }
