@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:stylish/features/home/models/product_model.dart';
 
-import '../../../../core/resources/asset_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import 'home_product_item_widget.dart';
 
 class HomeProductsListWidget extends StatelessWidget {
   final ScrollController controller;
-  const HomeProductsListWidget({super.key, required this.controller});
+  final List<ProductModel> products;
+
+  const HomeProductsListWidget(
+      {super.key, required this.controller, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +24,13 @@ class HomeProductsListWidget extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             itemBuilder: (context, index) => HomeProductItemWidget(
-              image: AssetManager.start,
-              name: 'Women Printed Kurta',
-              description: 'Neque porro quisquam est qui dolorem ipsum quia',
-              price: '1500',
+              product: products[index],
               onTap: () {},
             ),
             separatorBuilder: (context, index) => SizedBox(
               width: 5,
             ),
-            itemCount: 5,
+            itemCount: products.length,
           ),
         ),
         CircleAvatar(

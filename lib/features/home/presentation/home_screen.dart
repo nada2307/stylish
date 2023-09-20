@@ -8,7 +8,12 @@ import 'package:stylish/features/home/cubit/home_cubit.dart';
 import 'package:stylish/features/home/presentation/widgets/categry_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/hot_offers_card_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/products_small_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/special_offer_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/sponsored_card_widget.dart';
+import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
 
 import '../../../core/resources/color_manager.dart';
 import '../../../core/widgets/default_app_bar.dart';
@@ -103,10 +108,40 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        HomeProductsListWidget(controller: productsController),
+                        HomeProductsListWidget(
+                          controller: productsController,
+                          products: cubit.products,
+                        ),
                         SizedBox(
                           height: 15,
                         ),
+                        Special1offerWidget(),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        TrendingCardWidget(onTap: () {}),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        ProductsSmallListWidget(products: cubit.smallProducts),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        HotOffersCardWidget(
+                          images: [
+                            AssetManager.hotOffer,
+                            AssetManager.hotOffer1,
+                          ],
+                          onTap: () {},
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        SponsoredCardWidget(
+                            images: cubit.sponsoredImages, onPress: () {}),
                       ],
                     ),
                   ),

@@ -37,4 +37,9 @@ class StringManager {
   static const String sort = 'Sort';
   static const String filter = 'Filter';
   static const String shopNow = 'Shop Now';
+  static const String specialOffers = 'Special Offers 😱';
+  static const String specialOffersText =
+      'We make sure you get the offer you need at best prices';
+  static const String trendingProducts = 'Trending Products';
+  static const String sponsored = 'Sponsored';
 }
