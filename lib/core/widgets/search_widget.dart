@@ -42,6 +42,7 @@ class SearchWidget extends StatelessWidget {
           ),
           border: InputBorder.none,
         ),
+        onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
       ),
     );
   }

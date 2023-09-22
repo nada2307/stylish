@@ -19,7 +19,15 @@ class HotOffersCardWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorManager.white,
         borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 3),
+            color: ColorManager.grey3.withOpacity(0.25),
+            blurRadius: 3.0,
+          ),
+        ],
       ),
+      padding: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

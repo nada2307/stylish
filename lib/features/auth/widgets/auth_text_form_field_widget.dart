@@ -33,6 +33,7 @@ class _AuthTextFormFieldWidgetState extends State<AuthTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: widget.isObscure,
       validator: widget.validation ??
           (value) {
             if (value!.isEmpty) {
@@ -78,6 +79,7 @@ class _AuthTextFormFieldWidgetState extends State<AuthTextFormFieldWidget> {
           ),
         ),
       ),
+      onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
     );
   }
 }

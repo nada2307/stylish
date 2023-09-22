@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/string_manager.dart';
 import '../../../../core/widgets/default_button_widget.dart';
 import '../../sign_up/presentation/widgets/bottom_widget.dart';
@@ -26,6 +27,7 @@ class SignUpScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = SignUpCubit.get(context);
           return Scaffold(
+            backgroundColor: ColorManager.white,
             body: SafeArea(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),

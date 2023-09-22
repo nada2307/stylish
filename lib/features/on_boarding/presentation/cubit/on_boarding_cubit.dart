@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'on_boarding_state.dart';
@@ -8,38 +8,31 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
 
   static OnBoardingCubit get(context) => BlocProvider.of(context);
 
-  PageController pageController = PageController();
-
   int currentPage = 0;
 
-  void onChangeIndex(int index, String x) {
-    if (x == 'D') {
-      pageController.animateToPage(index,
-          duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+  void onChangeIndex({required int index, required String type}) {
+    int i;
+    if (type == 'd') {
+      i = index;
+      emit(DotChangeIndexState(i));
     } else {
       currentPage = index;
+      emit(ChangeIndexState());
     }
-    emit(ChangeIndexState());
   }
 
   void prevFunction() {
     if (currentPage != 0) {
-      pageController.animateToPage(
-        currentPage - 1,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeIn,
-      );
-      emit(ChangeIndexState());
+      int i = currentPage - 1;
+      emit(DotChangeIndexState(i));
     }
   }
 
   void nextFunction() {
     if (currentPage != 2) {
-      pageController.animateToPage(
-        currentPage + 1,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeIn,
-      );
+      int i = currentPage + 1;
+      emit(DotChangeIndexState(i));
+
       emit(ChangeIndexState());
     }
   }

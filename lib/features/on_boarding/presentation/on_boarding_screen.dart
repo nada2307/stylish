@@ -57,6 +57,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorManager.white,
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(left: 15.0, top: 15),

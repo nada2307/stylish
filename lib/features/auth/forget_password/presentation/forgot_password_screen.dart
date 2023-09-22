@@ -23,6 +23,7 @@ class ForgotPasswordScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = ForgotPasswordCubit.get(context);
           return Scaffold(
+            backgroundColor: ColorManager.white,
             body: SafeArea(
               child: Padding(
                 padding: const EdgeInsets.all(29.0),

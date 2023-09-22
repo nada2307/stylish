@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
 import 'package:stylish/core/resources/string_manager.dart';
 import 'package:stylish/core/widgets/search_widget.dart';
@@ -10,21 +9,27 @@ import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.da
 import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/hot_offers_card_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/products_small_list_widget.dart';
-import 'package:stylish/features/home/presentation/widgets/sale_item_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/special_offer_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/sponsored_card_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
 
-import '../../../core/resources/color_manager.dart';
 import '../../../core/widgets/default_app_bar.dart';
 import '../../../core/widgets/sort_filter_row_widget.dart';
+import '../data/test_data.dart';
+import 'widgets/sale_list_widget.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    var searchController = TextEditingController();
     return BlocProvider(
       create: (context) => HomeCubit(),
       child: BlocConsumer<HomeCubit, HomeState>(
@@ -32,9 +37,6 @@ class HomeScreen extends StatelessWidget {
           // TODO: implement listener
         },
         builder: (context, state) {
-          var cubit = HomeCubit.get(context);
-          PageController saleController = PageController();
-          ScrollController productsController = ScrollController();
           return Scaffold(
             appBar: defaultAppBar(),
             body: SingleChildScrollView(
@@ -59,75 +61,45 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   CategoryListWidget(
-                    categories: cubit.categories,
+                    categories: categories,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  SizedBox(
-                    height: 190,
-                    child: PageView.builder(
-                      scrollDirection: Axis.horizontal,
-                      controller: saleController,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                        child: SaleItemWidget(
-                          title: '50-40% OFF',
-                          text: 'Now in (product)',
-                          text1: 'All colours',
-                          image: AssetManager.sale,
-                          onTap: () {},
-                        ),
-                      ),
-                      itemCount: 3,
-                    ),
-                  ),
+                  SaleListWidget(),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        SmoothPageIndicator(
-                          controller: saleController,
-                          count: 3,
-                          effect: WormEffect(
-                            dotHeight: 9,
-                            dotWidth: 9,
-                            activeDotColor: ColorManager.primaryLight3,
-                          ),
-                        ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         DealOfDayWidget(
                           onTap: () {},
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         HomeProductsListWidget(
-                          controller: productsController,
-                          products: cubit.products,
+                          products: products,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Special1offerWidget(),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
-                        SizedBox(
+                        //todo card
+                        const SizedBox(
                           height: 15,
                         ),
                         TrendingCardWidget(onTap: () {}),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
-                        ProductsSmallListWidget(products: cubit.smallProducts),
-                        SizedBox(
+                        ProductsSmallListWidget(products: smallProducts),
+                        const SizedBox(
                           height: 15,
                         ),
                         HotOffersCardWidget(
@@ -141,7 +113,9 @@ class HomeScreen extends StatelessWidget {
                           height: 15,
                         ),
                         SponsoredCardWidget(
-                            images: cubit.sponsoredImages, onPress: () {}),
+                          images: sponsoredImages,
+                          onPress: () {},
+                        ),
                       ],
                     ),
                   ),

@@ -13,8 +13,7 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
+      body: Stack(
           alignment: Alignment.bottomRight,
           children: [
             Image.asset(
@@ -82,7 +81,7 @@ class StartScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
+
     );
   }
 }

@@ -8,6 +8,8 @@ import 'package:stylish/features/auth/sign_in/presentation/widgets/bottom_widget
 import 'package:stylish/features/auth/sign_in/presentation/widgets/sign_in_form_widget.dart';
 import 'package:stylish/features/get_started/presentation/start_screen.dart';
 
+import '../../../../core/resources/color_manager.dart';
+
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
@@ -28,6 +30,7 @@ class SignInScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = SignInCubit.get(context);
           return Scaffold(
+            backgroundColor: ColorManager.white,
             body: SafeArea(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
@@ -46,8 +49,6 @@ class SignInScreen extends StatelessWidget {
                       ),
                       DefaultButton(
                         function: () {
-                          navigateToh(context, StartScreen());
-
                           if (formKey.currentState!.validate()) {
                             cubit.signInFunction();
                           }
