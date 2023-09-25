@@ -23,7 +23,7 @@ class _ProductsSmallListWidgetState extends State<ProductsSmallListWidget> {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {
-        if (state is HomeSuccessScrollState) {
+        if (state is HomeSmallProductsSuccessScrollState) {
           scrollController.animateTo(
             state.position,
             duration: Duration(milliseconds: 300),
@@ -51,12 +51,14 @@ class _ProductsSmallListWidgetState extends State<ProductsSmallListWidget> {
                 itemCount: widget.products.length,
               ),
               FloatingActionButton(
+                heroTag: 'small products',
                 backgroundColor: ColorManager.grey4.withOpacity(0.7),
                 onPressed: () {
                   //todo
                   if (scrollController.hasClients) {
                     context.read<HomeCubit>().scrollPress(
-                          scrollController.offset,
+                          p: scrollController.offset,
+                          type: 's',
                         );
                   }
                 },

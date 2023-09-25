@@ -22,7 +22,7 @@ class _HomeProductsListWidgetState extends State<HomeProductsListWidget> {
   Widget build(BuildContext context) {
     return BlocListener<HomeCubit, HomeState>(
       listener: (context, state) {
-        if (state is HomeSuccessScrollState) {
+        if (state is HomeProductsSuccessScrollState) {
           scrollController.animateTo(
             state.position,
             duration: Duration(milliseconds: 300),
@@ -51,12 +51,13 @@ class _HomeProductsListWidgetState extends State<HomeProductsListWidget> {
             ),
           ),
           FloatingActionButton(
+            heroTag: 'products',
             backgroundColor: ColorManager.grey4.withOpacity(0.7),
             onPressed: () {
-              //todo
               if (scrollController.hasClients) {
                 context.read<HomeCubit>().scrollPress(
-                      scrollController.offset,
+                      p: scrollController.offset,
+                      type: 'p',
                     );
               }
             },

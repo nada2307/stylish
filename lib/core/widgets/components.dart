@@ -14,7 +14,7 @@ void navigateAndFinish(
       },
     );
 
-void navigateToh(
+void navigateTo(
   context,
   widget,
 ) =>

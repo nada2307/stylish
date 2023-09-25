@@ -10,10 +10,13 @@ class HomeCubit extends Cubit<HomeState> {
 
   final double cardWidth = 142;
 
-  void scrollPress(double p) {
+  void scrollPress({required double p, required String type}) {
     double position = p;
     print(position);
     position = position + cardWidth;
-    emit(HomeSuccessScrollState(position));
+    if (type == 's')
+      emit(HomeSmallProductsSuccessScrollState(position));
+    else
+      emit(HomeProductsSuccessScrollState(position));
   }
 }

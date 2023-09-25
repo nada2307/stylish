@@ -44,7 +44,7 @@ class BottomWidget extends StatelessWidget {
             ),
             InkWell(
                 onTap: () {
-                  navigateToh(context, SignUpScreen());
+                  navigateTo(context, SignUpScreen());
                 },
                 child: Text(
                   StringManager.signUp,
