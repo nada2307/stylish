@@ -16,3 +16,13 @@ class HomeSmallProductsSuccessScrollState extends HomeState {
 
   HomeSmallProductsSuccessScrollState(this.position);
 }
+
+class HomeSearchProductsLoadingState extends HomeState {}
+
+class HomeSearchProductsSuccessState extends HomeState {}
+
+class HomeSearchProductsErrorState extends HomeState {
+  final String error;
+
+  HomeSearchProductsErrorState(this.error);
+}
