@@ -53,6 +53,8 @@ class HomeProductItemWidget extends StatelessWidget {
                 ),
                 Text(
                   product.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
@@ -63,6 +65,8 @@ class HomeProductItemWidget extends StatelessWidget {
                 ),
                 Text(
                   product.description,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 10,

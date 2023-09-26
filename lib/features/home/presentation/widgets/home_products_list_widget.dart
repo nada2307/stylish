@@ -34,7 +34,7 @@ class _HomeProductsListWidgetState extends State<HomeProductsListWidget> {
         alignment: Alignment.centerRight,
         children: [
           SizedBox(
-            height: 245,
+            height: 260,
             child: ListView.separated(
               controller: scrollController,
               physics: BouncingScrollPhysics(),
