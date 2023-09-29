@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
 import 'package:stylish/core/widgets/components.dart';
 import 'package:stylish/core/widgets/default_button_widget.dart';
-import 'package:stylish/features/home/presentation/home_screen.dart';
+import 'package:stylish/features/layout/presentation/layout_screen.dart';
 
 import '../../../core/resources/color_manager.dart';
 import '../../../core/resources/string_manager.dart';
@@ -74,7 +74,7 @@ class StartScreen extends StatelessWidget {
                   Spacer(),
                   DefaultButton(
                       function: () {
-                        navigateAndFinish(context, HomeScreen());
+                        navigateAndFinish(context, LayoutScreen());
                       },
                       text: StringManager.getStarted),
                 ],

@@ -31,4 +31,8 @@ class AssetManager {
   static const String sponserd1 = '$imagePath/sponserd1.png';
   static const String sponserd2 = '$imagePath/sponserd2.png';
   static const String sponserd3 = '$imagePath/sponserd3.png';
+  static const String home = '$imagePath/home.png';
+  static const String cart = '$imagePath/cart.png';
+  static const String search = '$imagePath/search.png';
+  static const String settings = '$imagePath/settings.png';
 }
