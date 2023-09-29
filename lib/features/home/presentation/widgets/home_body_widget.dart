@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
@@ -33,7 +35,7 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = HomeCubit.get(context);
+        var cubit = context.read<HomeCubit>();
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
@@ -45,7 +47,7 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
                     SearchWidget(
                       onChange: (value) {
                         cubit.productSearchFunction(value);
-                        print(cubit.searchProducts.length);
+                        log(cubit.searchProducts.length.toString());
                       },
                       controller: searchController,
                     ),

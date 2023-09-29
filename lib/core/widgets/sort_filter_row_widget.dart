@@ -47,6 +47,9 @@ class SortAndFilterRowWidget extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          width: 5,
+        ),
         Container(
           decoration: BoxDecoration(
             color: ColorManager.white,

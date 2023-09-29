@@ -59,6 +59,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       backgroundColor: ColorManager.white,
       appBar: AppBar(
+        backgroundColor: ColorManager.white,
         leading: Padding(
           padding: const EdgeInsets.only(left: 15.0, top: 15),
           child: Row(
