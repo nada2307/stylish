@@ -4,10 +4,10 @@
 - An E-commerce app that shows clothes products and you can buy any product.
 
 ## Original UI 
-- [Visit the Figma design](https://www.figma.com/community/file/1264098337558102933/ecommerce-app-ui-kit-case-study-ecommerce-mobile-app-ui-kit?searchSessionId=ln848mi5-86o4kug0y7o)
+[Visit the Figma design](https://www.figma.com/community/file/1264098337558102933/ecommerce-app-ui-kit-case-study-ecommerce-mobile-app-ui-kit?searchSessionId=ln848mi5-86o4kug0y7o)
 
 ## Note
-This repository is still under development and I will continue to add more features to it.
+This repository is still under development, I will continue working on this repository and adding more features to it.
 
 ## Features  Set ✨
 - OnBoarding
@@ -17,7 +17,7 @@ This repository is still under development and I will continue to add more featu
 - Show cards for sale or Sponsor  
 - Search for a product
 
-## 🔌 Technologies
+## Technologies 🔌
 - flutter_bloc
 - bloc
 - flutter_native_splash
