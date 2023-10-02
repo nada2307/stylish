@@ -4,7 +4,7 @@
 - An E-commerce app that shows clothes products and you can buy any product.
 
 ## Original UI 
-- [Visit the Figma design]([https://xdfile.com/cleaning-services-app-ui-design-xd-template/](https://www.figma.com/community/file/1264098337558102933/ecommerce-app-ui-kit-case-study-ecommerce-mobile-app-ui-kit?searchSessionId=ln848mi5-86o4kug0y7o))
+- [Visit the Figma design](https://www.figma.com/community/file/1264098337558102933/ecommerce-app-ui-kit-case-study-ecommerce-mobile-app-ui-kit?searchSessionId=ln848mi5-86o4kug0y7o)
 
 ## Note
 This repository is still under development and I will continue to add more features to it.
