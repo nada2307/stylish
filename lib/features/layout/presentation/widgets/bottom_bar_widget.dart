@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:stylish/core/app_cubit/app_cubit.dart';
+import 'package:stylish/core/cubit/app_cubit.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
+import 'package:stylish/core/resources/string_manager.dart';
 
 import '../../../../core/resources/color_manager.dart';
 
@@ -21,7 +22,7 @@ class BottomBarWidget extends StatelessWidget {
             selected: cubit.indicatorIndex == 0,
             image: AssetManager.home,
             index: 0,
-            text: 'Home',
+            text: StringManager.home,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,7 +40,7 @@ class BottomBarWidget extends StatelessWidget {
                 ),
               ),
               Text(
-                'Wishlist',
+                StringManager.wishlist,
                 style: TextStyle(
                   color: cubit.indicatorIndex == 1
                       ? ColorManager.primary
@@ -54,13 +55,13 @@ class BottomBarWidget extends StatelessWidget {
             selected: cubit.indicatorIndex == 3,
             image: AssetManager.search,
             index: 3,
-            text: 'Search',
+            text: StringManager.search,
           ),
           BottomBarItem(
             selected: cubit.indicatorIndex == 4,
             image: AssetManager.settings,
             index: 4,
-            text: 'Setting',
+            text: StringManager.setting,
           ),
         ],
       ),

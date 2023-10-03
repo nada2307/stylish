@@ -43,4 +43,8 @@ class StringManager {
   static const String trendingProducts = 'Trending Products';
   static const String sponsored = 'Sponsored';
   static const String noProductsFound = 'No products found';
+  static const String home = 'Home';
+  static const String wishlist = 'Wishlist';
+  static const String search = 'Search';
+  static const String setting = 'setting';
 }
