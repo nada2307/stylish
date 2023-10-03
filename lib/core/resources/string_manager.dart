@@ -42,4 +42,5 @@ class StringManager {
       'We make sure you get the offer you need at best prices';
   static const String trendingProducts = 'Trending Products';
   static const String sponsored = 'Sponsored';
+  static const String noProductsFound = 'No products found';
 }

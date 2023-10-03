@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish/core/resources/asset_manager.dart';
+import 'package:stylish/core/resources/color_manager.dart';
 import 'package:stylish/core/resources/string_manager.dart';
 import 'package:stylish/core/widgets/search_widget.dart';
-import 'package:stylish/features/home/cubit/home_cubit.dart';
 import 'package:stylish/features/home/presentation/widgets/categry_list_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/deal_of_day_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/home_products_list_widget.dart';
@@ -16,6 +16,7 @@ import 'package:stylish/features/home/presentation/widgets/special_offer_widget.
 import 'package:stylish/features/home/presentation/widgets/sponsored_card_widget.dart';
 import 'package:stylish/features/home/presentation/widgets/trending_card_widget.dart';
 
+import '../../../../core/cubit/search_cubit.dart';
 import '../../../../core/widgets/sort_filter_row_widget.dart';
 import '../../data/test_data.dart';
 import 'sale_list_widget.dart';
@@ -32,10 +33,10 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<HomeCubit, HomeState>(
-      listener: (context, state) {},
+    return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
-        var cubit = context.read<HomeCubit>();
+        var cubit = context.read<SearchCubit>();
+
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
@@ -125,7 +126,21 @@ class _HomeBodyWidgetState extends State<HomeBodyWidget> {
                       ],
                     )
                   : cubit.searchProducts.isEmpty
-                      ? Text('no thing')
+                      ? Column(
+                          children: [
+                            SizedBox(
+                              height: 100,
+                            ),
+                            Text(
+                              StringManager.noProductsFound,
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: ColorManager.darkGrey,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        )
                       : SearchProductsWidget(
                           searchProducts: cubit.searchProducts),
             ],
