@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stylish/features/home/models/product_model.dart';
 
-import 'home_product_item_widget.dart';
+import '../../features/home/presentation/widgets/home_product_item_widget.dart';
 
 class SearchProductsWidget extends StatelessWidget {
   final List<ProductModel> searchProducts;
@@ -14,7 +14,7 @@ class SearchProductsWidget extends StatelessWidget {
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.8 / 3,
+          childAspectRatio: 1.7 / 2.88,
           mainAxisSpacing: 5,
           crossAxisSpacing: 5,
         ),

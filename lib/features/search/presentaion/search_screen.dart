@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish/core/cubit/search_cubit.dart';
 import 'package:stylish/core/widgets/search_widget.dart';
-import 'package:stylish/features/home/presentation/widgets/search_products_widget.dart';
+import 'package:stylish/core/widgets/search_products_widget.dart';
 
+import '../../../core/resources/color_manager.dart';
+import '../../../core/resources/string_manager.dart';
 import '../../../core/widgets/default_app_bar.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -40,11 +42,27 @@ class _SearchScreenState extends State<SearchScreen> {
                     const SizedBox(
                       height: 15.0,
                     ),
-                    cubit.searchProducts.isEmpty
+                    searchController.text.isEmpty
                         ? Container()
-                        : SearchProductsWidget(
-                            searchProducts: cubit.searchProducts,
-                          ),
+                        : cubit.searchProducts.isEmpty
+                            ? Column(
+                                children: [
+                                  SizedBox(
+                                    height: 100,
+                                  ),
+                                  Text(
+                                    StringManager.noProductsFound,
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: ColorManager.darkGrey,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              )
+                            : SearchProductsWidget(
+                                searchProducts: cubit.searchProducts,
+                              ),
                   ],
                 ),
               ),

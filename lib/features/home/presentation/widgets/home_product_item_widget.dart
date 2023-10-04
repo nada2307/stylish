@@ -40,7 +40,7 @@ class HomeProductItemWidget extends StatelessWidget {
               product.image,
               height: 124,
               width: MediaQuery.of(context).size.width * 0.5,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.fill,
             ),
           ),
           Padding(
