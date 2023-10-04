@@ -16,6 +16,12 @@ class SearchWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: ColorManager.white,
+        boxShadow: [
+          BoxShadow(
+            color: ColorManager.grey3.withOpacity(0.25),
+            blurRadius: 3.0,
+          ),
+        ],
       ),
       width: double.infinity,
       height: 50,

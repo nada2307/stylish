@@ -4,6 +4,7 @@ import 'package:stylish/core/resources/asset_manager.dart';
 import 'package:stylish/features/home/presentation/home_screen.dart';
 import 'package:stylish/core/cubit/app_cubit.dart';
 import 'package:stylish/features/layout/presentation/widgets/bottom_bar_widget.dart';
+import 'package:stylish/features/search/presentaion/search_screen.dart';
 
 import '../../../core/resources/color_manager.dart';
 
@@ -19,7 +20,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
     HomeScreen(),
     Container(),
     Container(),
-    Container(),
+    SearchScreen(),
     Container(),
   ];
 
