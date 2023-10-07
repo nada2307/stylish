@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:stylish/core/utilis/helper.dart';
+import 'package:stylish/features/product/presentation/product_details_screen.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../models/product_model.dart';
@@ -16,135 +18,140 @@ class HomeProductItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: (MediaQuery.of(context).size.width * 0.5) - 15,
-      decoration: BoxDecoration(
-        color: ColorManager.white,
-        borderRadius: BorderRadius.circular(6),
-        boxShadow: [
-          BoxShadow(
-            color: ColorManager.grey3.withOpacity(0.25),
-            blurRadius: 3.0,
-          ),
-        ],
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.0),
+    return InkWell(
+      onTap: () {
+        context.push(ProductDetailsScreen());
+      },
+      child: Container(
+        width: (MediaQuery.of(context).size.width * 0.5) - 15,
+        decoration: BoxDecoration(
+          color: ColorManager.white,
+          borderRadius: BorderRadius.circular(6),
+          boxShadow: [
+            BoxShadow(
+              color: ColorManager.grey3.withOpacity(0.25),
+              blurRadius: 3.0,
             ),
-            clipBehavior: Clip.antiAlias,
-            child: Image.asset(
-              product.image,
-              height: 124,
-              width: MediaQuery.of(context).size.width * 0.5,
-              fit: BoxFit.fill,
+          ],
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4.0),
+              ),
+              clipBehavior: Clip.antiAlias,
+              child: Image.asset(
+                product.image,
+                height: 124,
+                width: MediaQuery.of(context).size.width * 0.5,
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  product.name,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 4,
                   ),
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  product.description,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 10,
+                  Text(
+                    product.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  '₹${product.price}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
+                  SizedBox(
+                    height: 4,
                   ),
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                if (product.isOffer)
+                  Text(
+                    product.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 10,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    '₹${product.price}',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  if (product.isOffer)
+                    Row(
+                      children: [
+                        Text(
+                          '₹${product.oldPrice}',
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                            color: ColorManager.grey4,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 4,
+                        ),
+                        Text(
+                          product.offer,
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400,
+                            color: ColorManager.lightRed,
+                          ),
+                        ),
+                      ],
+                    ),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
-                      Text(
-                        '₹${product.oldPrice}',
-                        style: TextStyle(
-                          decoration: TextDecoration.lineThrough,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          color: ColorManager.grey4,
+                      RatingBar.builder(
+                        ignoreGestures: true,
+                        itemBuilder: (context, index) => Icon(
+                          Icons.star_rounded,
+                          color: ColorManager.yellow,
                         ),
+                        itemSize: 18,
+                        unratedColor: ColorManager.grey4,
+                        onRatingUpdate: (value) {},
+                        itemCount: 5,
+                        initialRating: product.rate,
+                        allowHalfRating: true,
                       ),
                       SizedBox(
-                        width: 4,
+                        width: 5,
                       ),
                       Text(
-                        product.offer,
+                        product.ratingNumber.toString(),
                         style: TextStyle(
                           fontSize: 10,
-                          fontWeight: FontWeight.w400,
-                          color: ColorManager.lightRed,
+                          fontWeight: FontWeight.w500,
+                          color: ColorManager.grey4,
                         ),
                       ),
                     ],
                   ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  children: [
-                    RatingBar.builder(
-                      ignoreGestures: true,
-                      itemBuilder: (context, index) => Icon(
-                        Icons.star_rounded,
-                        color: ColorManager.yellow,
-                      ),
-                      itemSize: 18,
-                      unratedColor: ColorManager.grey4,
-                      onRatingUpdate: (value) {},
-                      itemCount: 5,
-                      initialRating: product.rate,
-                      allowHalfRating: true,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      product.ratingNumber.toString(),
-                      style: TextStyle(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w500,
-                        color: ColorManager.grey4,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

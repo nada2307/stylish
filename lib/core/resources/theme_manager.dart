@@ -8,6 +8,9 @@ ThemeData getAppTheme() {
     primarySwatch: ColorManager.themeColor,
     scaffoldBackgroundColor: ColorManager.background,
     appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(
+        color: ColorManager.black,
+      ),
       backgroundColor: ColorManager.background,
       elevation: 0.0,
       systemOverlayStyle: SystemUiOverlayStyle(
