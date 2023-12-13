@@ -8,6 +8,7 @@ class ProductSizeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Size: 7UK',
@@ -92,8 +93,12 @@ class SizeModel {
 
 List<SizeModel> sizes = [
   SizeModel(
-    size: '7 UK',
+    size: '6 UK',
     isSelected: false,
+  ),
+  SizeModel(
+    size: '7 UK',
+    isSelected: true,
   ),
   SizeModel(
     size: '8 UK',
@@ -101,7 +106,7 @@ List<SizeModel> sizes = [
   ),
   SizeModel(
     size: '9 UK',
-    isSelected: true,
+    isSelected: false,
   ),
   SizeModel(
     size: '10 UK',

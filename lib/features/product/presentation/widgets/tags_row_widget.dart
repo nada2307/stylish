@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:stylish/core/resources/asset_manager.dart';
 
+import '../../../../core/resources/color_manager.dart';
 import 'tags_item_widget.dart';
 
 class TagsRowWidget extends StatelessWidget {
@@ -11,21 +14,25 @@ class TagsRowWidget extends StatelessWidget {
     return Row(
       children: [
         TagsItemWidget(
-          icon: Icons.location_on_outlined,
+          widget: SvgPicture.asset(AssetManager.location),
           text: 'Nearest Store',
         ),
         SizedBox(
           width: 8,
         ),
         TagsItemWidget(
-          icon: Icons.lock_outline_rounded,
+          widget: Icon(
+            Icons.lock_outline_rounded,
+            color: ColorManager.darkGrey,
+            size: 18,
+          ),
           text: 'Vip',
         ),
         const SizedBox(
           width: 8,
         ),
         TagsItemWidget(
-          icon: CupertinoIcons.checkmark_alt_circle,
+          widget: SvgPicture.asset(AssetManager.return_policy),
           text: 'Return policy',
         ),
       ],

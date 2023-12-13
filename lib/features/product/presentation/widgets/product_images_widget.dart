@@ -37,7 +37,7 @@ class _ProductImagesWidgetState extends State<ProductImagesWidget> {
                     widget.images[index],
                     height: 213,
                     width: double.infinity,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                 ),
                 itemCount: widget.images.length,

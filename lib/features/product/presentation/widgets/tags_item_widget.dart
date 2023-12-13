@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class TagsItemWidget extends StatelessWidget {
-  final IconData icon;
+  final Widget widget;
   final String text;
-  const TagsItemWidget({super.key, required this.icon, required this.text});
+  const TagsItemWidget({super.key, required this.widget, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +22,7 @@ class TagsItemWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: ColorManager.darkGrey,
-            size: 18,
-          ),
+          widget,
           SizedBox(
             width: 2,
           ),
