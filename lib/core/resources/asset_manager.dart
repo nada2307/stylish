@@ -35,4 +35,14 @@ class AssetManager {
   static const String cart = '$imagePath/cart.png';
   static const String search = '$imagePath/search.png';
   static const String settings = '$imagePath/settings.png';
+  static const String nike = '$imagePath/nike.png';
+  static const String nike1 = '$imagePath/nike1.png';
+  static const String nike2 = '$imagePath/nike2.png';
+  static const String nike3 = '$imagePath/nike3.png';
+  static const String nike4 = '$imagePath/nike4.png';
+  static const String goToCart = '$imagePath/go_to_cart.png';
+  static const String buyNow = '$imagePath/buy_now.png';
+  static const String compare = '$imagePath/compare.svg';
+  static const String location = '$imagePath/location.svg';
+  static const String return_policy = '$imagePath/return_policy.svg';
 }

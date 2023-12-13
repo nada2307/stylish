@@ -26,6 +26,12 @@ class SortAndFilterRowWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(6),
+            boxShadow: [
+              BoxShadow(
+                color: ColorManager.grey3.withOpacity(0.25),
+                blurRadius: 3.0,
+              ),
+            ],
           ),
           padding: EdgeInsets.all(5),
           child: Row(
@@ -54,6 +60,12 @@ class SortAndFilterRowWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: ColorManager.white,
             borderRadius: BorderRadius.circular(6),
+            boxShadow: [
+              BoxShadow(
+                color: ColorManager.grey3.withOpacity(0.25),
+                blurRadius: 3.0,
+              ),
+            ],
           ),
           padding: EdgeInsets.all(5),
           child: Row(

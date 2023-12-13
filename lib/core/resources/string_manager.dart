@@ -47,4 +47,14 @@ class StringManager {
   static const String wishlist = 'Wishlist';
   static const String search = 'Search';
   static const String setting = 'setting';
+  static const String returnPolicy = 'Return policy';
+  static const String Vip = 'Vip';
+  static const String nearestStore = 'Nearest Store';
+  static const String viewSimilar = 'View Similar';
+  static const String addToCompare = 'Add to Compare';
+  static const String More = 'More';
+  static const String Less = 'Less';
+  static const String productDetails = 'Product Details';
+  static const String similarTo = 'Similar To';
+  static const String vn = '';
 }
